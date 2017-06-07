@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "\n######################## widgets conditioned on variable datasets ##############\n\n# Fill the empty checkbox with column names;\n# condition = \"Choose\"\nobserve({\n  updateCheckboxGroupInput(session, \"variable1\",\n                           label = \"Variables\",\n                           choices = colnames(include$data),\n                           #true or false:\n                           inline= TRUE,\n                           selected = \"\")\n})\n# Fill the empty checkbox;\n# condition = \"All\"\nobserve({\n  updateCheckboxGroupInput(session, \"variable1b\",\n                           label = \"All_Variables\",\n                           choices = colnames(include$data),\n                           #true or false:\n                           inline= TRUE,\n                           selected = colnames(include$data))\n})\n\n\n\n# clear input (clear other output reactively on is.null(include$data))\nobserveEvent(input$reset, {\n  include$data <- NULL    \n  updateCheckboxGroupInput(session, \"variable1\",\n                           label = \"Variables\",\n                           choices = \"\",\n                           selected = \"\")\n  updateCheckboxGroupInput(session, \"variable1b\",\n                           label = \"All_Variables\",\n                           choices = \"\",\n                           selected = \"\")\n})\n\n\n",
+    "created" : 1496846032940.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "345761170",
+    "id" : "892E2942",
+    "lastKnownWriteTime" : 1490709343,
+    "last_content_update" : 1490709343,
+    "path" : "D:/user/Documents/googleVis_App/updateCheckboxGroupInput.R",
+    "project_path" : "updateCheckboxGroupInput.R",
+    "properties" : {
+    },
+    "relative_order" : 10,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
